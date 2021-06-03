@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-from politikus.extractives.content.extractive_concession import IExtractiveConcession  # NOQA E501
-from politikus.extractives.testing import POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa
 from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles, TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
-from zope.component import createObject
-from zope.component import queryUtility
+from politikus.extractives.content.extractive_concession import (
+    IExtractiveConcession  # NOQA E501,
+)
+from politikus.extractives.testing import (
+    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,
+)
+from zope.component import createObject, queryUtility
 
 import unittest
-
-
 
 
 class ExtractiveConcessionIntegrationTest(unittest.TestCase):
