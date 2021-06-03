@@ -24,7 +24,7 @@ class ExtractiveResources(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
-            VocabItem(u'273', _(u'''
+            VocabItem(u'282570', _(u'''
             Molybdenum oxides and hydroxides
             ''')),
             VocabItem(u'273', _(u'''

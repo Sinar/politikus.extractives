@@ -9,7 +9,8 @@ from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
-
+from plone.autoform import directives
+from plone.app.z3cform.widget import SelectFieldWidget
 
 class IExtractiveResourcesMarker(Interface):
     pass
@@ -19,10 +20,20 @@ class IExtractiveResourcesMarker(Interface):
 class IExtractiveResources(model.Schema):
     """
     """
+    directives.widget(ExtractiveResources=SelectFieldWidget)
+    ExtractiveResources = schema.List(
+        title=_(u'Extractive Resources'),
+        description=_(u'HS Code Extrative Resources'),
+        default=[],
+        value_type=schema.Choice(
+            vocabulary='politikus.extractives.resources'
+        ),
+        required=False,
+    )
 
-    project = schema.TextLine(
-        title=_(u'Project'),
-        description=_(u'Give in a project name'),
+    ExtractiveResourcesNote = schema.Text(
+        title=_(u'Extractive Resource Notes'),
+        description=_(u'Additional notes about resource'),
         required=False,
     )
 
@@ -34,11 +45,21 @@ class ExtractiveResources(object):
         self.context = context
 
     @property
-    def project(self):
-        if safe_hasattr(self.context, 'project'):
-            return self.context.project
+    def ExtractiveResources(self):
+        if safe_hasattr(self.context, 'ExtractiveResources'):
+            return self.context.ExtractiveResources
         return None
 
-    @project.setter
-    def project(self, value):
-        self.context.project = value
+    @ExtractiveResources.setter
+    def ExtractiveResources(self, value):
+        self.context.ExtractiveResources = value
+
+    @property
+    def ExtractiveResourceNotes(self):
+        if safe_hasattr(self.context, 'ExtractiveResourceNotes'):
+            return self.context.ExtractiveResourceNotes
+        return None
+
+    @ExtractiveResourceNotes.setter
+    def ExtractiveResourceNotes(self, value):
+        self.context.ExtractiveResourceNotes = value
