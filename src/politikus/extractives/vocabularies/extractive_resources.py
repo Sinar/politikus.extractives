@@ -24,6 +24,26 @@ class ExtractiveResources(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
+            VocabItem(u'2475', _(u'''
+            Wood of non-coniferous species, in the rough (whether/not
+            stripped of bark/sapwood)/roughly squared, but not treated
+            with paint, stains/other preservatives of the following
+            tropical woods:Abura, Acajou d’Afrique, Afrormosia, Ako,
+            Alan, Andiroba, Aningré, Avodiré, Azobé, Balau, Balsa, Bossé
+            clair, Bosséfoncé, Cativo, Cedro, Dabema, Dark Red Meranti,
+            Dibétou,Doussié, Framiré, Freijo, Fromager, Fuma,
+            Geronggang,Ilomba, Imbuia, Ipé, Iroko, Jaboty, Jelutong,
+            Jequitiba,Jongkong, Kapur, Kempas, Keruing, Kosipo, Kotibé,
+            Koto,Light Red Meranti, Limba, Louro, Maçaranduba,
+            Mahogany,Makoré, Mandioqueira, Mansonia, Mengkulang,
+            MerantiBakau, Merawan, Merbau, Merpauh, Mersawa,
+            Moabi,Niangon, Nyatoh, Obeche, Okoumé, Onzabili,
+            Orey,Ovengkol, Pzogp. Padauk, Paldao, Palissandre de
+            Guatemala,Palissandre de Para, Palissandre de Rio,
+            Palissandre de Rose,Pau Amarelo, Pau Marfim, Pulai, Punah,
+            Quaruba, Ramin,Sapelli, Saqui-Saqui, Spetir, Sipo, Sucupira,
+            Suren, Tauari,Teak, Tiama, Tola, Virola, White Lauan, White
+            Meranti,White Seraya, Yellow Meranti ''')),
             VocabItem(u'282570', _(u'''
             Molybdenum oxides and hydroxides
             ''')),
