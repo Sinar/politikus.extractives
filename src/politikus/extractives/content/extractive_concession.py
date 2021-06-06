@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# from plone.app.textfield import RichText
+from plone.app.textfield import RichText
 from collective import dexteritytextindexer
 from plone.app.vocabularies.catalog import CatalogSource
 # from plone.supermodel.directives import fieldset
@@ -37,6 +37,15 @@ class IExtractiveConcession(model.Schema):
                 title=_(u'Description'),
                 description=_(u'''
                 Concession description
+                '''),
+                required=False,
+                )
+
+    dexteritytextindexer.searchable('details')
+    details = RichText(
+                title=_(u'Details'),
+                description=_(u'''
+                Detailed notes about this concession.
                 '''),
                 required=False,
                 )

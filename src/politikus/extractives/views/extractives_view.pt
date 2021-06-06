@@ -4,10 +4,194 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="politikus.extractives"
       metal:use-macro="context/main_template/macros/master">
+
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+
+     <div tal:replace="structure provider:plone.abovecontenttitle" />
+     <h1 class="documentFirstHeading" tal:content="context/title" />
+     <div tal:replace="structure provider:plone.belowcontenttitle" />
+     <p class="documentDescription" tal:content="context/description" />
+
+     <div tal:replace="structure provider:plone.abovecontentbody" />
+
+
+     <h3>Details</h3>
+     <div tal:content="structure view/w/details/render"></div>
+
+     <div id="extractive-resources">
+        <h3>Extractive Resources</h3>
+        <ul tal:repeat="resources context/ExtractiveResources">
+             <li tal:content="python: view.resource(resources)"></li>
+        </ul>
+
+        <h4>Resources Notes</h4>
+        <div tal:content="context/ExtractiveResourceNotes">
+        </div>
+
+     </div>
+
+
+     <!-- Award Status -->
+
+     <h3>Award Status</h3>
+
+     <div id="award-status">
+         <h5>Award Status</h5>
+         <span tal:content="structure view/w/award_status/render"></span>
+     </div>
+
+     <div id="award-date">
+         <h5>Award Date</h5>
+         <span tal:content="structure view/w/award_date/render"></span>
+     </div>
+
+
+     <div id="award-currency">
+         <h5>Award Currency</h5>
+         <span tal:content="structure view/w/award_currency/render"></span>
+     </div>
+
+
+     <div id="award-amount">
+         <h5>Award Amount</h5>
+         <span tal:content="structure view/w/award_amount/render"></span>
+     </div>
+
+     <!-- Contract Period -->
+
+     <h3>Contract Period</h3>
+    
+     <div id="contract-start">
+         <h5>Contract Period Start Date</h5>
+         <span tal:content="structure view/w/contractPeriod_startDate/render"></span>
+     </div>
+
+     <div id="contract-end">
+         <h5>Contract Period Start Date</h5>
+         <span tal:content="structure view/w/contractPeriod_endDate/render"></span>
+     </div>
+
+     <div id="contract-extent">
+         <h5>Contract Period Max Extension Date</h5>
+         <span tal:content="structure view/w/contractPeriod_maxExtentDate/render"></span>
+     </div>
+
+    <h3>Parties</h3>
+
+    <dl tal:condition="context/administrativeEntity">
+        <dt>
+        Administrative Entity:
+        <a href="" tal:attributes="href
+           context/administrativeEntity/to_object/absolute_url"
+           tal:content="context/administrativeEntity/to_object/title">
+        </a>
+        <dd tal:content="context/administrativeEntity/to_object/description"
+            />
+        </dt>
+    </dl>
+
+    <dl tal:condition="context/buyer">
+        <dt>
+        Buyer: 
+        <a href="" tal:attributes="href
+           context/buyer/to_object/absolute_url"
+           tal:content="context/buyer/to_object/title">
+        </a>
+        <dd tal:content="context/buyer/to_object/description"
+            />
+        </dt>
+    </dl>
+
+    <dl tal:condition="context/procuringEntity">
+        <dt>
+        Procuring Entity:
+        <a href="" tal:attributes="href
+           context/procuringEntity/to_object/absolute_url"
+           tal:content="context/procuringEntity/to_object/title">
+        </a>
+        <dd tal:content="context/procuringEntity/to_object/description"
+            />
+        </dt>
+    </dl>
+
+
+    <dl tal:condition="context/suppliers"
+        tal:repeat="supplier context/suppliers">
+        <dt>
+        Supplier:
+        <a href="" tal:attributes="href
+           supplier/to_object/absolute_url"
+           tal:content="supplier/to_object/title">
+        </a>
+        <dd tal:content="supplier/to_object/description"
+            />
+        </dt>
+    </dl>
+
+    <dl tal:condition="context/tenderers"
+        tal:repeat="tenderer context/suppliers">
+        <dt>
+        Tenderer:
+        <a href="" tal:attributes="href
+           tenderer/to_object/absolute_url"
+           tal:content="tenderer/to_object/title">
+        </a>
+        <dd tal:content="tenderer/to_object/description"
+            />
+        </dt>
+    </dl>
+
+    <dl tal:condition="context/funders"
+        tal:repeat="funder context/funders">
+        <dt>
+        Funder:
+        <a href="" tal:attributes="href
+           funder/to_object/absolute_url"
+           tal:content="funder/to_object/title">
+        </a>
+        <dd tal:content="funder/to_object/description"
+            />
+        </dt>
+    </dl>
+
+    <dl tal:condition="context/reviewBody">
+        <dt>
+        Review Body:
+        <a href="" tal:attributes="href
+           context/reviewBody/to_object/absolute_url"
+           tal:content="context/reviewBody/to_object/title">
+        </a>
+        <dd tal:content="context/reviewBody/to_object/description"
+            />
+        </dt>
+    </dl>
+
+
+
+    <dl tal:condition="context/interestedParties"
+        tal:repeat="interestedParty context/interestedParties">
+        <dt>
+        Interested Party
+        <a href="" tal:attributes="href
+           interestedParty/to_object/absolute_url"
+           tal:content="interestedParty/to_object/title">
+        </a>
+        <dd tal:content="interestedParty/to_object/description"
+            />
+        </dt>
+    </dl>
+
+
+
+        
+     <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
 </body>
 </html>

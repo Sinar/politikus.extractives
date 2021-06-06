@@ -30,7 +30,7 @@ class IExtractiveResources(model.Schema):
         required=False,
     )
 
-    ExtractiveResourcesNote = schema.Text(
+    ExtractiveResourceNotes = schema.Text(
         title=_(u'Extractive Resource Notes'),
         description=_(u'Additional notes about resource'),
         required=False,
