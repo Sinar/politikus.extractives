@@ -3,10 +3,10 @@ from plone import api
 from plone.app.testing import setRoles, TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
 from politikus.extractives.content.extractive_concession import (
-    IExtractiveConcession  # NOQA E501,
+    IExtractiveConcession  # NOQA E501,,
 )
 from politikus.extractives.testing import (
-    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,
+    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,,
 )
 from zope.component import createObject, queryUtility
 

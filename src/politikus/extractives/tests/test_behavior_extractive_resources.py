@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
-from politikus.extractives.behaviors.extractive_resources import IExtractiveResourcesMarker
-from politikus.extractives.testing import POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles, TEST_USER_ID
 from plone.behavior.interfaces import IBehavior
+from politikus.extractives.behaviors.extractive_resources import (
+    IExtractiveResourcesMarker,
+)
+from politikus.extractives.testing import (
+    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,
+)
 from zope.component import getUtility
 
 import unittest

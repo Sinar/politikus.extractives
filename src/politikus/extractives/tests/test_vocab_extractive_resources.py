@@ -2,7 +2,7 @@
 from plone.app.testing import setRoles, TEST_USER_ID
 from politikus.extractives import _
 from politikus.extractives.testing import (
-    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,
+    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,,
 )
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory, IVocabularyTokenized

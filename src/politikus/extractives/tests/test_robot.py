@@ -2,7 +2,7 @@
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 from politikus.extractives.testing import (
-    POLITIKUS_EXTRACTIVES_ACCEPTANCE_TESTING  # noqa: E501,,
+    POLITIKUS_EXTRACTIVES_ACCEPTANCE_TESTING  # noqa: E501,,,
 )
 
 import os
