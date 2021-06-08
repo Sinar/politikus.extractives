@@ -5,7 +5,7 @@ from politikus.extractives.behaviors.extractive_resources import (
     IExtractiveResourcesMarker,
 )
 from politikus.extractives.testing import (
-    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,
+    POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,,
 )
 from zope.component import getUtility
 

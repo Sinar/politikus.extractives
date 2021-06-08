@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from plone.app.textfield import RichText
 from collective import dexteritytextindexer
+from plone.app.textfield import RichText
 from plone.app.vocabularies.catalog import CatalogSource
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget

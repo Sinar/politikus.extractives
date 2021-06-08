@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="politikus.extractives">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+     name="natural-resource-extractive-concessions-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="politikus.extractives.interfaces.IPolitikusExtractivesLayer"
+     class=".natural_resource_extractive_concessions_viewlet.NaturalResourceExtractiveConcessionsViewlet"
+     template="natural-resource-extractive-concessions-viewlet.pt"
+     permission="zope2.View"
+     />
+
+
+</configure>

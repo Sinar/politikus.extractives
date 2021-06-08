@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from zope.schema.interfaces import IVocabularyFactory
-from zope.component import getUtility
 from plone.dexterity.browser.view import DefaultView
 from politikus.extractives import _
+from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
+
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
