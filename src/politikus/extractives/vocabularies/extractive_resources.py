@@ -44,6 +44,13 @@ class ExtractiveResources(object):
             Quaruba, Ramin,Sapelli, Saqui-Saqui, Spetir, Sipo, Sucupira,
             Suren, Tauari,Teak, Tiama, Tola, Virola, White Lauan, White
             Meranti,White Seraya, Yellow Meranti ''')),
+            VocabItem(u'2602', _(u'''
+            Manganese ores and concentrates, including manganiferous
+            iron ores and concentrates with a manganese content of 20%
+            or more, calculated on the dry weight ''')),
+            VocabItem(u'2505', _(u''' Sands of all kinds; natural,
+            whether or not coloured, other than metal-bearing sands of
+            chapter 26 ''')),
             VocabItem(u'282570', _(u'''
             Molybdenum oxides and hydroxides
             ''')),
@@ -57,9 +64,6 @@ class ExtractiveResources(object):
             VocabItem(u'270112', _(u'''
             Coal; bituminous, whether or not pulverised, but not
             agglomerated ''')),
-            VocabItem(u'2505', _(u''' Sands of all kinds; natural,
-            whether or not coloured, other than metal-bearing sands of
-            chapter 26 ''')),
             VocabItem(u'281', _(u'''
             Iron ore and concentrates
             ''')),
