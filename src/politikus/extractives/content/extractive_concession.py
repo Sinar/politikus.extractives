@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 from plone.app.textfield import RichText
 from plone.app.vocabularies.catalog import CatalogSource
 # from plone.supermodel.directives import fieldset
@@ -23,7 +23,7 @@ class IExtractiveConcession(model.Schema):
 
     # model.load('extractive_concession.xml')
 
-    dexteritytextindexer.searchable('title')
+    textindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),
                 description=_(u'''
@@ -32,7 +32,7 @@ class IExtractiveConcession(model.Schema):
                 required=True,
                 )
 
-    dexteritytextindexer.searchable('description')
+    textindexer.searchable('description')
     description = schema.Text(
                 title=_(u'Description'),
                 description=_(u'''
@@ -41,7 +41,7 @@ class IExtractiveConcession(model.Schema):
                 required=False,
                 )
 
-    dexteritytextindexer.searchable('details')
+    textindexer.searchable('details')
     details = RichText(
                 title=_(u'Details'),
                 description=_(u'''
