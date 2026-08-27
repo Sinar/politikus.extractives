@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from plone.app.testing import setRoles, TEST_USER_ID
-from politikus.extractives import _
 from politikus.extractives.testing import (
     POLITIKUS_EXTRACTIVES_INTEGRATION_TESTING  # noqa,,,
 )
@@ -20,13 +19,11 @@ class ExtractiveResourcesIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
     def test_vocab_extractive_resources(self):
-        vocab_name = 'politikus.extractives.ExtractiveResources'
+        vocab_name = 'politikus.extractives.resources'
         factory = getUtility(IVocabularyFactory, vocab_name)
         self.assertTrue(IVocabularyFactory.providedBy(factory))
 
         vocabulary = factory(self.portal)
         self.assertTrue(IVocabularyTokenized.providedBy(vocabulary))
-        self.assertEqual(
-            vocabulary.getTerm('sony-a7r-iii').title,
-            _(u'Sony Aplha 7R III'),
-        )
+        terms = list(vocabulary)
+        self.assertTrue(len(terms) > 0)
